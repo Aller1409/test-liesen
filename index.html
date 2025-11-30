@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fliesenleger Meisterbetrieb</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #1A2A3A;
+        }
+        header {
+            background: #1A2A3A;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 { margin: 0; }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1581091059449-52466d04898a') center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 0 0 10px rgba(0,0,0,0.7);
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .btn {
+            background: #00A8A8;
+            color: white;
+            padding: 12px 24px;
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 6px;
+        }
+
+        section {
+            padding: 60px 40px;
+        }
+        .leistungen {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        .leistung-box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .galerie img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background: #1A2A3A;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Fliesenleger Meisterbetrieb</h1>
+    <nav>
+        <a href="#start">Start</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
+</header>
+
+<div class="hero" id="start">
+    <div>
+        <h2>Professionelle Fliesenarbeiten</h2>
+        <p>Bad • Boden • Mosaik • Reparaturen</p>
+        <a href="#kontakt" class="btn">Kostenloses Angebot</a>
+    </div>
+</div>
+
+<section id="leistungen">
+    <h2>Unsere Leistungen</h2>
+    <div class="leistungen">
+        <div class="leistung-box"><h3>Badsanierung</h3><p>Komplette Badfliesen und hochwertige Gestaltung.</p></div>
+        <div class="leistung-box"><h3>Bodenfliesen</h3><p>Langlebig, modern und professionell verlegt.</p></div>
+        <div class="leistung-box"><h3>Mosaikarbeiten</h3><p>Individuelle Designs für ein edles Finish.</p></div>
+        <div class="leistung-box"><h3>Reparaturen</h3><p>Schnelle und zuverlässige Ausbesserungen.</p></div>
+    </div>
+</section>
+
+<section id="galerie">
+    <h2>Galerie</h2>
+    <div class="galerie">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Fliesen Beispiel">
+        <img src="https://images.unsplash.com/photo-1598470470809-83d7956ff06f" alt="Bad Beispiel">
+    </div>
+</section>
+
+<section id="kontakt">
+    <h2>Kontakt</h2>
+    <p>📞 Telefon: 0170 0000000</p>
+    <p>📍 Adresse: Musterstraße 12, 12345 Musterstadt</p>
+    <p>✉️ E-Mail: info@fliesenleger.de</p>
+</section>
+
+<footer>
+    © 2025 Fliesenleger Meisterbetrieb – Alle Rechte vorbehalten
+</footer>
+
+</body>
+</html>
