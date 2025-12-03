@@ -7,13 +7,13 @@
     <title>BV Fliesen – Professionelle Fliesenarbeiten in Albstadt</title>
 
     <!-- SEO BASIS -->
-    <meta name="description" content="BV Fliesen in Albstadt – Professionelle Fliesenarbeiten für Bad, Boden, Mosaik & Reparaturen. Moderne Badsanierungen, hochwertige Verlegung und zuverlässiger Service.">
-    <meta name="keywords" content="Fliesenleger Albstadt, Badsanierung, Fliesen, Mosaik, Bodenfliesen, Reparaturen, BV Fliesen">
+    <meta name="description" content="BV Fliesen in Albstadt – Professionelle Fliesenarbeiten für Bad, komplette Badsanierung aus einer Hand sowie Fliesenverlegung aller Art. Jetzt unverbindliches Angebot anfragen.">
+    <meta name="keywords" content="Fliesenleger Albstadt, Badsanierung, komplette Badsanierung aus einer Hand, Fliesenverlegung, Fliesenleger, BV Fliesen">
     <meta name="robots" content="index,follow">
 
     <!-- Open Graph für Social Media -->
     <meta property="og:title" content="BV Fliesen – Professionelle Fliesenarbeiten in Albstadt">
-    <meta property="og:description" content="Moderne Fliesenarbeiten für Bad, Boden und Mosaik. Jetzt kostenloses Angebot anfragen.">
+    <meta property="og:description" content="Moderne Fliesenarbeiten für Bad, Boden und komplette Badsanierungen aus einer Hand. Jetzt kostenloses Angebot anfragen.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bv-fliesen.de/">
     <meta property="og:image" content="https://bv-fliesen.de/bvfliesen_logo.png">
@@ -36,15 +36,13 @@
       },
       "priceRange": "€€",
       "areaServed": "Albstadt und Umgebung",
-      "description": "Professionelle Fliesenarbeiten, Badsanierung, Bodenfliesen, Mosaikarbeiten und Reparaturen."
+      "description": "Professionelle Fliesenarbeiten, Badsanierung, komplette Badsanierung aus einer Hand und Fliesenverlegung."
     }
     </script>
 
     <style>
-        /* ------------------------------
-           DESIGN-VARIABLEN
-        ------------------------------ */
         :root {
+            /* Standard: dunkles Design */
             --bg-body: #050509;
             --bg-card: #0E1017;
             --bg-elevated: #111827;
@@ -60,19 +58,38 @@
             --transition-med: 0.3s ease;
         }
 
+        /* Auto Light-Mode nach System-Einstellung */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-body: #F3F4F6;
+                --bg-card: #FFFFFF;
+                --bg-elevated: #FFFFFF;
+                --accent: #00A0A0;
+                --accent-soft: #008585;
+                --text-main: #1F2933;
+                --text-muted: #6B7280;
+                --border-subtle: #D1D5DB;
+                --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.12);
+            }
+        }
+
         * {
             box-sizing: border-box;
         }
 
-        /* ------------------------------
-           GLOBAL
-        ------------------------------ */
         body {
             margin: 0;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-            background: radial-gradient(circle at top, #111827 0, #050509 55%);
+            background: radial-gradient(circle at top, #111827 0, var(--bg-body) 55%);
             color: var(--text-main);
             line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        @media (prefers-color-scheme: light) {
+            body {
+                background: var(--bg-body);
+            }
         }
 
         h1, h2, h3 {
@@ -91,9 +108,7 @@
             padding: 0 20px 70px;
         }
 
-        /* ------------------------------
-           HEADER + MEGA-MENÜ
-        ------------------------------ */
+        /* HEADER + MEGA-MENÜ */
         header {
             position: sticky;
             top: 0;
@@ -101,6 +116,12 @@
             background: rgba(5, 5, 9, 0.92);
             backdrop-filter: blur(18px);
             border-bottom: 1px solid var(--border-subtle);
+        }
+
+        @media (prefers-color-scheme: light) {
+            header {
+                background: rgba(249, 250, 251, 0.95);
+            }
         }
 
         .nav-inner {
@@ -158,7 +179,6 @@
             border-color: var(--accent);
         }
 
-        /* Mega-Menü */
         .nav-item-mega {
             position: relative;
         }
@@ -179,6 +199,7 @@
             pointer-events: none;
             transition: opacity var(--transition-med), transform var(--transition-med);
             min-width: 420px;
+            border: 1px solid var(--border-subtle);
         }
 
         .nav-item-mega:hover .mega-panel {
@@ -216,7 +237,6 @@
             color: var(--accent);
         }
 
-        /* CTA im Header */
         .nav-cta {
             background: var(--accent);
             color: #000;
@@ -234,7 +254,6 @@
             box-shadow: 0 16px 40px rgba(0, 194, 194, 0.5);
         }
 
-        /* Burger für Mobile */
         .nav-toggle {
             display: none;
             width: 40px;
@@ -280,9 +299,7 @@
             opacity: 0;
         }
 
-        /* ------------------------------
-           HERO
-        ------------------------------ */
+        /* HERO */
         .hero {
             max-width: 1200px;
             margin: 24px auto 40px;
@@ -402,9 +419,7 @@
             color: var(--accent);
         }
 
-        /* ------------------------------
-           SECTIONS
-        ------------------------------ */
+        /* SECTIONS */
         section {
             margin-top: 40px;
         }
@@ -437,7 +452,7 @@
             border-radius: var(--radius-md);
             padding: 18px 18px 20px;
             border: 1px solid var(--border-subtle);
-            box-shadow: 0 12px 34px rgba(0,0,0,0.55);
+            box-shadow: var(--shadow-soft);
             transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
         }
 
@@ -457,7 +472,68 @@
             color: var(--text-muted);
         }
 
-        /* G A L E R I E */
+        /* BEFORE/AFTER */
+        .before-after-wrapper {
+            display: grid;
+            grid-template-columns: minmax(0, 1.8fr) minmax(0, 1.2fr);
+            gap: 18px;
+            align-items: center;
+        }
+
+        .before-after {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .before-after img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .before-after .before-img {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        .before-after .before-img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .before-after .after-img {
+            position: relative;
+            z-index: 1;
+        }
+
+        .before-after-range {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+        }
+
+        .before-after-range input[type="range"] {
+            width: 100%;
+        }
+
+        .before-after-label {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(0,0,0,0.5);
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+        }
+
+        /* GALLERY */
         .gallery-layout {
             display: grid;
             grid-template-columns: 2fr 1.4fr;
@@ -480,18 +556,47 @@
             height: 100%;
         }
 
-        .gallery-side img {
-            height: 100%;
+        /* GOOGLE-BEWERTUNGEN (statisch) */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
         }
 
-        /* KONTAKT */
+        .review-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: 16px 18px;
+            border: 1px solid var(--border-subtle);
+            box-shadow: var(--shadow-soft);
+            font-size: 14px;
+        }
+
+        .review-name {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .review-stars {
+            color: #FACC15;
+            margin-bottom: 6px;
+            font-size: 13px;
+        }
+
+        .review-source {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* KONTAKT + FORMULAR */
         .contact-grid {
             display: grid;
-            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
             gap: 20px;
         }
 
-        .contact-card {
+        .contact-card,
+        .form-card {
             background: var(--bg-card);
             border-radius: var(--radius-lg);
             padding: 20px 22px;
@@ -509,9 +614,64 @@
         }
 
         .contact-highlight {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 600;
             margin-bottom: 12px;
+        }
+
+        form .field {
+            margin-bottom: 12px;
+        }
+
+        form label {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--border-subtle);
+            background: #020617;
+            color: var(--text-main);
+            padding: 8px 10px;
+            font-family: inherit;
+            font-size: 14px;
+            outline: none;
+            transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+        }
+
+        @media (prefers-color-scheme: light) {
+            form input,
+            form textarea {
+                background: #F9FAFB;
+                color: #111827;
+            }
+        }
+
+        form input:focus,
+        form textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 1px var(--accent);
+        }
+
+        form textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .form-note {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .form-error {
+            color: #F97373;
+            font-size: 12px;
+            display: none;
         }
 
         /* IMPRESSUM / DATENSCHUTZ */
@@ -522,6 +682,7 @@
             border: 1px solid var(--border-subtle);
             box-shadow: var(--shadow-soft);
             font-size: 14px;
+            margin-top: 28px;
         }
 
         .legal-section h2 {
@@ -564,7 +725,8 @@
             box-shadow: 0 18px 40px rgba(0,0,0,0.6);
             z-index: 120;
             cursor: pointer;
-            transition: transform var(--transition-med), box-shadow var(--transition-med), background var(--transition-fast);
+            transition: transform var(--transition-med), box-shadow var(--transition-med), background var(--transition-fast), opacity 0.2s ease;
+            animation: waPulse 2.5s infinite ease-in-out;
         }
 
         .wa-fab:hover {
@@ -585,9 +747,12 @@
             white-space: nowrap;
         }
 
-        /* ------------------------------
-           MOBILE
-        ------------------------------ */
+        @keyframes waPulse {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-3px) scale(1.05); }
+        }
+
+        /* MOBILE */
         @media (max-width: 900px) {
             nav {
                 gap: 14px;
@@ -657,7 +822,8 @@
             }
 
             .gallery-layout,
-            .contact-grid {
+            .contact-grid,
+            .before-after-wrapper {
                 grid-template-columns: 1fr;
             }
 
@@ -665,7 +831,6 @@
                 padding-bottom: 90px;
             }
         }
-
     </style>
 </head>
 <body>
@@ -673,7 +838,7 @@
 <header>
     <div class="nav-inner">
         <div class="logo-wrap">
-            <img src="bvfliesen_logo.png" alt="BV Fliesen Logo">
+            <img src="bvfliesen_logo.png" alt="BV Fliesen Logo" loading="lazy">
             <div class="logo-text">BV FLIESEN</div>
         </div>
 
@@ -686,41 +851,38 @@
                     <div class="mega-panel">
                         <div>
                             <h4>BAD</h4>
-                            <a class="mega-link" href="#leistungen">
+                            <a class="mega-link" href="badsanierung.html">
                                 Badsanierung
-                                <span>Komplette Modernisierung inkl. Fliesenarbeiten.</span>
+                                <span>Komplette Modernisierung deines Badezimmers.</span>
                             </a>
-                            <a class="mega-link" href="#leistungen">
-                                Dusche & Wellness
-                                <span>Bodengleiche Duschen, Nischen & Akzente.</span>
+                            <a class="mega-link" href="komplette-sanierung.html">
+                                Komplette Sanierung aus einer Hand
+                                <span>Koordination aller Gewerke über BV Fliesen.</span>
                             </a>
                         </div>
                         <div>
                             <h4>BODEN</h4>
-                            <a class="mega-link" href="#leistungen">
-                                Bodenfliesen
-                                <span>Langlebige, pflegeleichte Böden für alle Räume.</span>
-                            </a>
-                            <a class="mega-link" href="#leistungen">
-                                Großformat
-                                <span>Großformat-Fliesen für ein ruhiges, edles Bild.</span>
+                            <a class="mega-link" href="fliesenverlegung.html">
+                                Fliesenverlegung allgemein
+                                <span>Wohnräume, Flure, Gewerbe – sauber verlegt.</span>
                             </a>
                         </div>
                         <div>
-                            <h4>DETAILS</h4>
-                            <a class="mega-link" href="#leistungen">
-                                Mosaikarbeiten
-                                <span>Individuelle Akzente an Wänden & Duschen.</span>
+                            <h4>SERVICE</h4>
+                            <a class="mega-link" href="#galerie">
+                                Referenzen
+                                <span>Vorher / Nachher Eindrücke und Projekte.</span>
                             </a>
-                            <a class="mega-link" href="#leistungen">
-                                Reparaturen
-                                <span>Schnelle Ausbesserung von Schäden & Fugen.</span>
+                            <a class="mega-link" href="#kontakt">
+                                Kontakt & Angebot
+                                <span>Schnelle Rückmeldung über Telefon, Mail oder WhatsApp.</span>
                             </a>
                         </div>
                     </div>
                 </li>
 
                 <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#bewertungen">Bewertungen</a></li>
                 <li><a href="#kontakt">Kontakt</a></li>
                 <li><a href="#impressum">Impressum</a></li>
                 <li><a href="#datenschutz">Datenschutz</a></li>
@@ -741,7 +903,7 @@
         <div class="hero-content">
             <div class="hero-badge">Meisterliche Fliesenarbeiten · Albstadt</div>
             <h1>Moderne <span>Fliesenlösungen</span> für Bad, Boden & mehr.</h1>
-            <p>BV Fliesen steht für saubere Ausführung, hochwertige Materialien und zuverlässige Termine – von der Badsanierung bis zur kleinen Reparatur.</p>
+            <p>BV Fliesen steht für saubere Ausführung, hochwertige Materialien und zuverlässige Termine – von der Badsanierung bis zur kompletten Sanierung aus einer Hand.</p>
 
             <div class="hero-actions">
                 <a href="#kontakt" class="btn-primary">
@@ -765,29 +927,59 @@
     <section id="leistungen">
         <div class="section-header">
             <h2>Leistungen</h2>
-            <p>Alles rund um Fliesen – aus einer Hand, sauber und zuverlässig.</p>
+            <p>Badsanierung, komplette Sanierungen aus einer Hand & Fliesenverlegung.</p>
         </div>
 
         <div class="card-grid">
             <article class="card">
                 <h3>Badsanierung</h3>
-                <p>Von der Planung bis zur fertigen Dusche – moderne, fugenarme Lösungen, abgestimmt auf deinen Stil und dein Budget.</p>
+                <p>Komplette Modernisierung deines Badezimmers mit hochwertigen Fliesen, modernen Duschen und stimmigen Details.</p>
+                <p><a href="badsanierung.html" style="color:var(--accent); font-size:13px;">Mehr erfahren →</a></p>
             </article>
 
             <article class="card">
-                <h3>Bodenfliesen</h3>
-                <p>Robuste, pflegeleichte Böden für Wohnräume, Flure und Gewerbe – exakt verlegt, mit sauberen Übergängen und Sockeln.</p>
+                <h3>Komplette Sanierung aus einer Hand</h3>
+                <p>Wir koordinieren für dich alle Arbeiten rund ums Bad – Fliesen, ggf. Sanitär in Zusammenarbeit mit Partnerbetrieben.</p>
+                <p><a href="komplette-sanierung.html" style="color:var(--accent); font-size:13px;">Mehr erfahren →</a></p>
             </article>
 
             <article class="card">
-                <h3>Mosaik & Akzente</h3>
-                <p>Feine Details für Nischen, Duschen oder Waschtische – Mosaikarbeiten für ein individuelles, hochwertiges Erscheinungsbild.</p>
+                <h3>Fliesenverlegung allgemein</h3>
+                <p>Boden- und Wandfliesen in Wohnräumen, Fluren, Küchen und Gewerbe – exakt verlegt, optisch ruhig und langlebig.</p>
+                <p><a href="fliesenverlegung.html" style="color:var(--accent); font-size:13px;">Mehr erfahren →</a></p>
             </article>
+        </div>
+    </section>
 
-            <article class="card">
-                <h3>Reparaturen & Fugen</h3>
-                <p>Tausch einzelner Fliesen, Silikon- und Fugenarbeiten – ideal bei kleineren Schäden oder zur optischen Auffrischung.</p>
-            </article>
+    <!-- BEFORE / AFTER -->
+    <section id="before-after">
+        <div class="section-header">
+            <h2>Vorher / Nachher</h2>
+            <p>Ein Eindruck, wie stark sich ein Raum durch neue Fliesen verändert.</p>
+        </div>
+
+        <div class="before-after-wrapper">
+            <div class="before-after">
+                <div class="after-img">
+                    <img src="https://images.unsplash.com/photo-1598470470809-83d7956ff06f?auto=format&fit=crop&w=1200&q=80"
+                         alt="Nachher: modern saniertes Bad" loading="lazy">
+                </div>
+                <div class="before-img" id="beforeImg">
+                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=80"
+                         alt="Vorher: altes Bad" loading="lazy">
+                </div>
+                <div class="before-after-label">Vorher / Nachher</div>
+                <div class="before-after-range">
+                    <input type="range" id="baRange" min="0" max="100" value="50">
+                </div>
+            </div>
+
+            <div>
+                <p style="color:var(--text-muted); font-size:14px;">
+                    Gerade im Bad zeigt sich der Unterschied zwischen „irgendwie gemacht“ und professionell geplantem Fliesenbild.
+                    Durch großformatige Fliesen, ruhige Fugenbilder und saubere Details wirkt der Raum deutlich moderner und größer.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -795,22 +987,54 @@
     <section id="galerie">
         <div class="section-header">
             <h2>Galerie</h2>
-            <p>Ein Einblick in Projekte und Oberflächen, mit denen wir täglich arbeiten.</p>
+            <p>Ein Einblick in Oberflächen und Projekte, mit denen wir arbeiten.</p>
         </div>
 
         <div class="gallery-layout">
             <div class="gallery-main">
                 <img src="https://images.unsplash.com/photo-1598470470809-83d7956ff06f?auto=format&fit=crop&w=1200&q=80"
-                     alt="Modernes Bad mit freistehender Badewanne und Fliesen">
+                     alt="Modernes Bad mit freistehender Badewanne und Fliesen" loading="lazy">
             </div>
             <div class="gallery-side">
                 <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=900&q=80"
-                     alt="Detailaufnahme einer hochwertigen Fliesenwand">
+                     alt="Detailaufnahme einer hochwertigen Fliesenwand" loading="lazy">
             </div>
         </div>
     </section>
 
-    <!-- KONTAKT -->
+    <!-- BEWERTUNGEN (statisch) -->
+    <section id="bewertungen">
+        <div class="section-header">
+            <h2>Google-Bewertungen</h2>
+            <p>Auszüge aus Rückmeldungen zufriedener Kunden.</p>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-name">M. Schneider</div>
+                <div class="review-stars">★★★★★</div>
+                <p>„Sehr saubere Arbeit, zuverlässige Terminabsprachen und ein Top-Ergebnis im Bad.
+                    Absolute Empfehlung.“</p>
+                <div class="review-source">Google Bewertung · sinngemäß wiedergegeben</div>
+            </div>
+            <div class="review-card">
+                <div class="review-name">A. Müller</div>
+                <div class="review-stars">★★★★★</div>
+                <p>„Von der ersten Besichtigung bis zur fertigen Fliese alles professionell. Preise transparent,
+                    Ergebnis wie besprochen.“</p>
+                <div class="review-source">Google Bewertung · sinngemäß wiedergegeben</div>
+            </div>
+            <div class="review-card">
+                <div class="review-name">Familie K.</div>
+                <div class="review-stars">★★★★★</div>
+                <p>„Komplette Badsanierung aus einer Hand – wir mussten uns um fast nichts kümmern. 
+                    So stellt man sich Handwerk vor.“</p>
+                <div class="review-source">Google Bewertung · sinngemäß wiedergegeben</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAKT + FORMULAR -->
     <section id="kontakt">
         <div class="section-header">
             <h2>Kontakt</h2>
@@ -828,15 +1052,48 @@
                 <p>Gerne komme ich zur Besichtigung vorbei und erstelle ein unverbindliches Angebot.</p>
             </div>
 
-            <div class="contact-card">
-                <h3>Infos für deine Anfrage</h3>
-                <p>Damit ich dir möglichst genau helfen kann, sind folgende Punkte hilfreich:</p>
-                <ul style="padding-left:18px; color: var(--text-muted); font-size: 13px;">
-                    <li>Art der Fläche (Bad, Boden, Treppe, etc.)</li>
-                    <li>ungefähre Quadratmeterzahl</li>
-                    <li>gewünschter Zeitraum</li>
-                    <li>ggf. Fotos vom aktuellen Zustand</li>
-                </ul>
+            <div class="form-card">
+                <h3>Kontaktformular</h3>
+                <p class="form-note">
+                    Die mit * markierten Felder sind Pflichtfelder. Deine Daten werden nur zur Bearbeitung der Anfrage verwendet.
+                </p>
+
+                <!-- HINWEIS: Für echten Mailversand z.B. Formspree oder Web3Forms nutzen -->
+                <form id="kontaktForm" action="https://formspree.io/f/DEINE_FORM_ID" method="POST">
+                    <div class="field">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                        <div class="form-error" id="err-name">Bitte gib deinen Namen ein.</div>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">E-Mail *</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="form-error" id="err-email">Bitte gib eine gültige E-Mail-Adresse ein.</div>
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">Telefon (optional)</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="field">
+                        <label for="message">Nachricht / Projektbeschreibung *</label>
+                        <textarea id="message" name="message" required></textarea>
+                        <div class="form-error" id="err-message">Bitte beschreibe kurz dein Projekt.</div>
+                    </div>
+
+                    <div class="field">
+                        <label style="font-size:12px;">
+                            <input type="checkbox" id="privacyCheck" required>
+                            Ich habe die <a href="#datenschutz" style="color:var(--accent);">Datenschutzerklärung</a> gelesen und akzeptiere diese.
+                        </label>
+                        <div class="form-error" id="err-privacy">Bitte bestätige die Datenschutzerklärung.</div>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="margin-top:8px;">Nachricht senden</button>
+                    <div class="form-note" id="formStatus" style="margin-top:6px;"></div>
+                </form>
             </div>
         </div>
     </section>
@@ -873,7 +1130,7 @@
     </section>
 
     <!-- DATENSCHUTZ -->
-    <section id="datenschutz" class="legal-section" style="margin-top:28px;">
+    <section id="datenschutz" class="legal-section">
         <h2>Datenschutzerklärung</h2>
 
         <p><strong>1. Allgemeine Hinweise</strong><br>
@@ -890,16 +1147,16 @@
            dienen ausschließlich der technischen Stabilität und Sicherheit der Seite.</p>
 
         <p><strong>4. Kontaktaufnahme</strong><br>
-           Wenn du uns per E-Mail oder telefonisch kontaktierst, werden deine Angaben zur Bearbeitung der
-           Anfrage und für Rückfragen gespeichert. Eine Weitergabe an Dritte erfolgt nicht ohne deine
+           Wenn du uns per E-Mail, Telefon, WhatsApp oder über das Kontaktformular kontaktierst, werden deine Angaben
+           zur Bearbeitung der Anfrage und für Rückfragen gespeichert. Eine Weitergabe an Dritte erfolgt nicht ohne deine
            ausdrückliche Zustimmung.</p>
 
-        <p><strong>5. Einbindung von Drittanbietern</strong><br>
-           Soweit externe Dienste (z.B. eingebettete Bilder von Drittanbietern) verwendet werden, erfolgt dies
+        <p><strong>5. Einbindung externer Dienste</strong><br>
+           Soweit externe Dienste (z.B. eingebundene Bilder oder Schriften) verwendet werden, erfolgt dies
            auf Grundlage eines berechtigten Interesses an einer ansprechenden Darstellung der Webseite.
         </p>
 
-        <p><strong>6. Rechte der betroffenen Personen</strong><br>
+        <p><strong>6. Deine Rechte</strong><br>
            Du hast das Recht auf Auskunft über deine gespeicherten Daten, Berichtigung, Löschung sowie
            Einschränkung der Verarbeitung. Außerdem hast du ein Recht auf Datenübertragbarkeit und kannst
            erteilte Einwilligungen jederzeit mit Wirkung für die Zukunft widerrufen.</p>
@@ -927,16 +1184,82 @@
     const navToggle = document.querySelector(".nav-toggle");
     const body = document.body;
 
-    navToggle.addEventListener("click", () => {
-        body.classList.toggle("nav-open");
-    });
+    if (navToggle) {
+        navToggle.addEventListener("click", () => {
+            body.classList.toggle("nav-open");
+        });
+    }
 
-    // Beim Klick auf Link im mobilen Menü wieder schließen
     document.querySelectorAll(".nav-links a").forEach(link => {
         link.addEventListener("click", () => {
             body.classList.remove("nav-open");
         });
     });
+
+    // Before/After Slider
+    const baRange = document.getElementById("baRange");
+    const beforeImg = document.getElementById("beforeImg");
+
+    if (baRange && beforeImg) {
+        const updateBeforeAfter = () => {
+            const val = baRange.value;
+            beforeImg.style.width = val + "%";
+        };
+        baRange.addEventListener("input", updateBeforeAfter);
+        updateBeforeAfter();
+    }
+
+    // Form-Validation (Basic)
+    const form = document.getElementById("kontaktForm");
+    if (form) {
+        form.addEventListener("submit", function(e) {
+            let valid = true;
+            const name = document.getElementById("name");
+            const email = document.getElementById("email");
+            const message = document.getElementById("message");
+            const privacy = document.getElementById("privacyCheck");
+            const status = document.getElementById("formStatus");
+
+            const showError = (id, show) => {
+                const el = document.getElementById(id);
+                if (el) el.style.display = show ? "block" : "none";
+            };
+
+            if (!name.value.trim()) {
+                valid = false;
+                showError("err-name", true);
+            } else showError("err-name", false);
+
+            if (!email.value.trim() || !email.checkValidity()) {
+                valid = false;
+                showError("err-email", true);
+            } else showError("err-email", false);
+
+            if (!message.value.trim()) {
+                valid = false;
+                showError("err-message", true);
+            } else showError("err-message", false);
+
+            if (!privacy.checked) {
+                valid = false;
+                showError("err-privacy", true);
+            } else showError("err-privacy", false);
+
+            if (!valid) {
+                e.preventDefault();
+                if (status) {
+                    status.style.color = "#F97373";
+                    status.textContent = "Bitte prüfe die markierten Felder.";
+                }
+            } else {
+                if (status) {
+                    status.style.color = "#22C55E";
+                    status.textContent = "Deine Nachricht wird gesendet...";
+                }
+                // E-Mail Versand erfolgt über Formspree/Web3Forms (action-URL oben anpassen)
+            }
+        });
+    }
 </script>
 
 </body>
