@@ -6,42 +6,67 @@
     <title>BV Fliesen – Professionelle Fliesenarbeiten</title>
 
     <style>
-        /* ------------------------------
+        /* -----------------------------------
            GLOBAL STYLES
-        ------------------------------ */
-        body {
+        ----------------------------------- */
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             font-family: "Segoe UI", Arial, sans-serif;
-            background: #f2f4f7;
+            background: #f3f5f7;
             color: #1A2A3A;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
         h1, h2, h3 {
             font-weight: 700;
-            margin: 0;
+            margin-bottom: 10px;
         }
 
-        a { text-decoration: none; }
+        a {
+            text-decoration: none;
+        }
 
-        /* ------------------------------
+        /* Smooth fade animation */
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* -----------------------------------
            HEADER
-        ------------------------------ */
+        ----------------------------------- */
         header {
             background: #0F1C2E;
             color: white;
-            padding: 20px 40px;
+            padding: 18px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 50;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         header img {
             height: 70px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        header img:hover {
+            transform: scale(1.03);
         }
 
         nav a {
@@ -50,33 +75,32 @@
             font-size: 17px;
             font-weight: 500;
             padding-bottom: 4px;
-            transition: 0.2s;
+            transition: 0.25s;
         }
 
         nav a:hover {
             border-bottom: 2px solid #00C2C2;
+            color: #00C2C2;
         }
 
-        /* ------------------------------
-            HERO SECTION
-        ------------------------------ */
+        /* -----------------------------------
+           HERO SECTION
+        ----------------------------------- */
         .hero {
-            height: 88vh;
+            height: 90vh;
             background: url('Badsanierungbild.hero.png') center center/cover no-repeat;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: white;
-            padding: 0 20px;
             position: relative;
         }
 
         .hero::before {
             content: "";
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            inset: 0;
             background: rgba(0,0,0,0.55);
             z-index: 1;
         }
@@ -85,10 +109,11 @@
             position: relative;
             z-index: 2;
             max-width: 800px;
+            animation: fadeIn 1.4s ease;
         }
 
         .hero h2 {
-            font-size: 52px;
+            font-size: 54px;
             margin-bottom: 10px;
         }
 
@@ -106,25 +131,24 @@
             border-radius: 8px;
             transition: 0.25s;
             font-weight: 600;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.2);
         }
 
         .btn:hover {
             background: #009E9E;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
-        /* ------------------------------
-            SECTIONS
-        ------------------------------ */
+        /* -----------------------------------
+           SECTION DEFAULT
+        ----------------------------------- */
         section {
             padding: 70px 40px;
             max-width: 1400px;
             margin: auto;
         }
 
-        #leistungen h2,
-        #galerie h2,
-        #kontakt h2 {
+        section h2 {
             font-size: 34px;
             margin-bottom: 25px;
         }
@@ -139,67 +163,111 @@
         .leistung-box {
             background: white;
             padding: 28px;
-            border-radius: 14px;
+            border-radius: 16px;
             box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-            transition: 0.25s;
+            transition: 0.3s;
         }
 
         .leistung-box:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.14);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.15);
         }
 
-        /* GALLERY */
+        /* -----------------------------------
+           GALLERY
+        ----------------------------------- */
         .galerie img {
             width: 100%;
-            border-radius: 14px;
+            border-radius: 16px;
             margin-bottom: 25px;
             box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            transition: 0.3s;
         }
 
-        /* ------------------------------
-            FOOTER
-        ------------------------------ */
+        .galerie img:hover {
+            transform: scale(1.02);
+        }
+
+        /* -----------------------------------
+           WHATSAPP BUTTON
+        ----------------------------------- */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background: #25D366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 34px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+            z-index: 100;
+            transition: 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            background: #1ebe5d;
+        }
+
+        /* -----------------------------------
+           FOOTER
+        ----------------------------------- */
         footer {
             background: #0F1C2E;
             color: white;
             text-align: center;
-            padding: 25px;
+            padding: 30px;
             margin-top: 40px;
         }
 
-        /* ------------------------------
-            MOBILE OPTIMIERUNG
-        ------------------------------ */
+        footer a {
+            color: #00C2C2;
+        }
+
+        /* -----------------------------------
+           MOBILE RESPONSE
+        ----------------------------------- */
         @media (max-width: 768px) {
+
             header {
                 flex-direction: column;
-                text-align: center;
-                padding: 15px 20px;
+                gap: 10px;
             }
+
             nav a {
                 margin: 0 10px;
                 font-size: 16px;
             }
+
             .hero {
-                height: 68vh;
+                height: 65vh;
             }
+
             .hero h2 {
                 font-size: 34px;
             }
+
             .hero p {
                 font-size: 18px;
             }
+
             .btn {
                 font-size: 16px;
                 padding: 10px 22px;
             }
         }
+
     </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
     <img src="bvfliesen_logo.png" alt="BV Fliesen Logo">
     <nav>
@@ -207,6 +275,8 @@
         <a href="#leistungen">Leistungen</a>
         <a href="#galerie">Galerie</a>
         <a href="#kontakt">Kontakt</a>
+        <a href="#impressum">Impressum</a>
+        <a href="#datenschutz">Datenschutz</a>
     </nav>
 </header>
 
@@ -220,7 +290,7 @@
 </div>
 
 <!-- LEISTUNGEN -->
-<section id="leistungen">
+<section id="leistungen" class="fade-in">
     <h2>Unsere Leistungen</h2>
 
     <div class="leistungen">
@@ -247,31 +317,34 @@
 </section>
 
 <!-- GALERIE -->
-<section id="galerie">
+<section id="galerie" class="fade-in">
     <h2>Galerie</h2>
 
     <div class="galerie">
-        <!-- Entferntes Bild -->
-        <!-- Zweites Bild bleibt drin -->
         <img src="https://images.unsplash.com/photo-1598470470809-83d7956ff06f" alt="Bad Beispiel">
     </div>
 </section>
 
 <!-- KONTAKT -->
-<section id="kontakt">
+<section id="kontakt" class="fade-in">
     <h2>Kontakt</h2>
     <p>📞 Telefon: 0152 08392863 </p>
-    <p>📍 Adresse: Eyachstraße 21 <br>
-    72459 Albstadt </p>
+    <p>📍 Adresse: Eyachstraße 21 <br> 72459 Albstadt </p>
     <p>✉️ E-Mail: info@bv-fliesen.de</p>
 </section>
 
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp-btn" href="https://wa.me/4915208392863" target="_blank">💬</a>
+
+<!-- FOOTER -->
 <footer>
- © 2025 BV Fliesen – Alle Rechte vorbehalten |
-<a href="#impressum" style="color:#00C2C2; text-decoration:none;">Impressum</a>
+    © 2025 BV Fliesen – Alle Rechte vorbehalten |
+    <a href="#impressum">Impressum</a> |
+    <a href="#datenschutz">Datenschutz</a>
 </footer>
+
 <!-- IMPRESSUM -->
-<section id="impressum" style="padding:60px 40px; max-width:900px; margin:auto;">
+<section id="impressum" class="fade-in" style="padding:60px 40px; max-width:900px; margin:auto;">
     <h2>Impressum</h2>
 
     <p><strong>BV Fliesen</strong><br>
@@ -300,7 +373,38 @@
     Alle Inhalte dieser Webseite sind urheberrechtlich geschützt.</p>
 </section>
 
+<!-- DATENSCHUTZERKLÄRUNG -->
+<section id="datenschutz" class="fade-in" style="padding:60px 40px; max-width:900px; margin:auto;">
+    <h2>Datenschutzerklärung</h2>
 
+    <p><strong>1. Allgemeiner Hinweis</strong></p>
+    <p>Der Schutz Ihrer persönlichen Daten ist uns sehr wichtig. Ihre Daten werden im Rahmen der gesetzlichen Vorschriften geschützt.</p>
+
+    <p><strong>2. Erhebung und Verarbeitung personenbezogener Daten</strong></p>
+    <p>Beim Besuch unserer Webseite werden automatisch technische Daten verarbeitet (z. B. IP-Adresse, Browsertyp, Uhrzeit). Diese Daten dienen der technischen Bereitstellung der Seite.</p>
+
+    <p><strong>3. Kontaktaufnahme</strong></p>
+    <p>Wenn Sie uns per WhatsApp, Telefon oder E-Mail kontaktieren, werden Ihre Angaben zur Bearbeitung der Anfrage gespeichert.</p>
+
+    <p><strong>4. Weitergabe von Daten</strong></p>
+    <p>Eine Weitergabe an Dritte findet grundsätzlich nicht statt, außer wenn gesetzlich vorgeschrieben.</p>
+
+    <p><strong>5. Ihre Rechte</strong></p>
+    <ul>
+        <li>Auskunft über gespeicherte Daten</li>
+        <li>Löschung oder Sperrung</li>
+        <li>Widerruf erteilter Einwilligungen</li>
+    </ul>
+
+    <p><strong>6. WhatsApp Kontakt</strong></p>
+    <p>Durch Kontaktaufnahme via WhatsApp gelten die Datenschutzrichtlinien von WhatsApp.</p>
+
+    <p><strong>7. Hosting</strong></p>
+    <p>Die Website wird über GitHub Pages gehostet. Dabei können technische Daten verarbeitet werden.</p>
+
+    <p><strong>8. Aktualität</strong></p>
+    <p>Diese Datenschutzerklärung wurde zuletzt aktualisiert im Dezember 2025.</p>
+</section>
 
 </body>
 </html>
