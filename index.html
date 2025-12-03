@@ -173,4 +173,101 @@
         ------------------------------ */
         @media (max-width: 768px) {
             header {
-                fl
+                flex-direction: column;
+                text-align: center;
+                padding: 15px 20px;
+            }
+            nav a {
+                margin: 0 10px;
+                font-size: 16px;
+            }
+            .hero {
+                height: 68vh;
+            }
+            .hero h2 {
+                font-size: 34px;
+            }
+            .hero p {
+                font-size: 18px;
+            }
+            .btn {
+                font-size: 16px;
+                padding: 10px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="bvfliesen_logo.png" alt="BV Fliesen Logo">
+    <nav>
+        <a href="#start">Start</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero" id="start">
+    <div class="hero-content">
+        <h2>Professionelle Fliesenarbeiten</h2>
+        <p>Bad • Boden • Mosaik • Reparaturen</p>
+        <a href="#kontakt" class="btn">Kostenloses Angebot</a>
+    </div>
+</div>
+
+<!-- LEISTUNGEN -->
+<section id="leistungen">
+    <h2>Unsere Leistungen</h2>
+
+    <div class="leistungen">
+        <div class="leistung-box">
+            <h3>Badsanierung</h3>
+            <p>Moderne, hochwertige Badgestaltung aus einer Hand.</p>
+        </div>
+
+        <div class="leistung-box">
+            <h3>Bodenfliesen</h3>
+            <p>Langlebig, modern und professionell verlegt.</p>
+        </div>
+
+        <div class="leistung-box">
+            <h3>Mosaikarbeiten</h3>
+            <p>Individuelle Designs für ein exklusives Ergebnis.</p>
+        </div>
+
+        <div class="leistung-box">
+            <h3>Reparaturen</h3>
+            <p>Schnelle und zuverlässige Ausbesserungsarbeiten.</p>
+        </div>
+    </div>
+</section>
+
+<!-- GALERIE -->
+<section id="galerie">
+    <h2>Galerie</h2>
+
+    <div class="galerie">
+        <!-- Entferntes Bild -->
+        <!-- Zweites Bild bleibt drin -->
+        <img src="https://images.unsplash.com/photo-1598470470809-83d7956ff06f" alt="Bad Beispiel">
+    </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt">
+    <h2>Kontakt</h2>
+    <p>📞 Telefon: 0170 0000000</p>
+    <p>📍 Adresse: albaner 12, 12345 Musterstadt</p>
+    <p>✉️ E-Mail: info@fliesenleger.de</p>
+</section>
+
+<footer>
+    © 2025 BV Fliesen – Alle Rechte vorbehalten
+</footer>
+
+</body>
+</html>
