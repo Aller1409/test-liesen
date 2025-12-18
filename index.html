@@ -74,9 +74,7 @@
             }
         }
 
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         body {
             margin: 0;
@@ -88,20 +86,12 @@
         }
 
         @media (prefers-color-scheme: light) {
-            body {
-                background: var(--bg-body);
-            }
+            body { background: var(--bg-body); }
         }
 
-        h1, h2, h3 {
-            font-weight: 600;
-            margin: 0;
-        }
+        h1, h2, h3 { font-weight: 600; margin: 0; }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        a { text-decoration: none; color: inherit; }
 
         main {
             max-width: 1200px;
@@ -120,9 +110,7 @@
         }
 
         @media (prefers-color-scheme: light) {
-            header {
-                background: rgba(249, 250, 251, 0.95);
-            }
+            header { background: rgba(249, 250, 251, 0.95); }
         }
 
         .nav-inner {
@@ -141,9 +129,7 @@
             gap: 14px;
         }
 
-        .logo-wrap img {
-            height: 60px;
-        }
+        .logo-wrap img { height: 60px; }
 
         .logo-text {
             font-size: 22px;
@@ -180,9 +166,7 @@
             border-color: var(--accent);
         }
 
-        .nav-item-mega {
-            position: relative;
-        }
+        .nav-item-mega { position: relative; }
 
         .mega-panel {
             position: absolute;
@@ -280,25 +264,12 @@
             transition: transform var(--transition-fast), opacity var(--transition-fast);
         }
 
-        .nav-toggle span::before {
-            transform: translateY(-6px);
-        }
+        .nav-toggle span::before { transform: translateY(-6px); }
+        .nav-toggle span::after { transform: translateY(6px); }
 
-        .nav-toggle span::after {
-            transform: translateY(6px);
-        }
-
-        .nav-open .nav-toggle span {
-            transform: rotate(45deg);
-        }
-
-        .nav-open .nav-toggle span::before {
-            transform: rotate(-90deg);
-        }
-
-        .nav-open .nav-toggle span::after {
-            opacity: 0;
-        }
+        .nav-open .nav-toggle span { transform: rotate(45deg); }
+        .nav-open .nav-toggle span::before { transform: rotate(-90deg); }
+        .nav-open .nav-toggle span::after { opacity: 0; }
 
         /* HERO */
         .hero {
@@ -307,6 +278,7 @@
             border-radius: 28px;
             overflow: hidden;
             position: relative;
+            /* Hinweis: Dieses Bild liegt aktuell im Root. Wenn du es nach /img verschiebst -> url('img/Badsanierungbild.hero.png') */
             background: url('Badsanierungbild.hero.png') center center/cover no-repeat;
             min-height: 72vh;
             display: flex;
@@ -345,13 +317,8 @@
             letter-spacing: 0.18em;
         }
 
-        .hero h1 {
-            font-size: 40px;
-        }
-
-        .hero h1 span {
-            color: var(--accent);
-        }
+        .hero h1 { font-size: 40px; }
+        .hero h1 span { color: var(--accent); }
 
         .hero p {
             font-size: 17px;
@@ -421,9 +388,7 @@
         }
 
         /* SECTIONS */
-        section {
-            margin-top: 40px;
-        }
+        section { margin-top: 40px; }
 
         .section-header {
             display: flex;
@@ -433,9 +398,7 @@
             margin-bottom: 20px;
         }
 
-        .section-header h2 {
-            font-size: 26px;
-        }
+        .section-header h2 { font-size: 26px; }
 
         .section-header p {
             font-size: 14px;
@@ -463,15 +426,8 @@
             border-color: rgba(0,194,194,0.3);
         }
 
-        .card h3 {
-            font-size: 18px;
-            margin-bottom: 6px;
-        }
-
-        .card p {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
+        .card h3 { font-size: 18px; margin-bottom: 6px; }
+        .card p { font-size: 14px; color: var(--text-muted); }
 
         /* BEFORE/AFTER (FIXED) */
         .before-after-wrapper {
@@ -588,21 +544,9 @@
             font-size: 14px;
         }
 
-        .review-name {
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .review-stars {
-            color: #FACC15;
-            margin-bottom: 6px;
-            font-size: 13px;
-        }
-
-        .review-source {
-            font-size: 12px;
-            color: var(--text-muted);
-        }
+        .review-name { font-weight: 600; margin-bottom: 4px; }
+        .review-stars { color: #FACC15; margin-bottom: 6px; font-size: 13px; }
+        .review-source { font-size: 12px; color: var(--text-muted); }
 
         /* KONTAKT + FORMULAR */
         .contact-grid {
@@ -620,14 +564,8 @@
             box-shadow: var(--shadow-soft);
         }
 
-        .contact-card p {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        .contact-card strong {
-            color: var(--text-main);
-        }
+        .contact-card p { font-size: 14px; color: var(--text-muted); }
+        .contact-card strong { color: var(--text-main); }
 
         .contact-highlight {
             font-size: 24px;
@@ -635,9 +573,7 @@
             margin-bottom: 12px;
         }
 
-        form .field {
-            margin-bottom: 12px;
-        }
+        form .field { margin-bottom: 12px; }
 
         form label {
             display: block;
@@ -720,9 +656,7 @@
             text-align: center;
         }
 
-        footer a {
-            color: var(--accent);
-        }
+        footer a { color: var(--accent); }
 
         /* WhatsApp Floating Button */
         .wa-fab {
@@ -770,9 +704,7 @@
 
         /* MOBILE */
         @media (max-width: 900px) {
-            nav {
-                gap: 14px;
-            }
+            nav { gap: 14px; }
 
             .nav-links {
                 position: fixed;
@@ -812,30 +744,13 @@
                 pointer-events: auto;
             }
 
-            .nav-cta {
-                display: none;
-            }
+            .nav-cta { display: none; }
+            .nav-toggle { display: inline-flex; }
 
-            .nav-toggle {
-                display: inline-flex;
-            }
-
-            .hero {
-                margin: 18px auto 22px;
-                border-radius: 24px;
-            }
-
-            .hero-content {
-                padding: 26px 22px 26px;
-            }
-
-            .hero h1 {
-                font-size: 28px;
-            }
-
-            .hero-meta {
-                flex-direction: column;
-            }
+            .hero { margin: 18px auto 22px; border-radius: 24px; }
+            .hero-content { padding: 26px 22px 26px; }
+            .hero h1 { font-size: 28px; }
+            .hero-meta { flex-direction: column; }
 
             .gallery-layout,
             .contact-grid,
@@ -843,9 +758,7 @@
                 grid-template-columns: 1fr;
             }
 
-            main {
-                padding-bottom: 90px;
-            }
+            main { padding-bottom: 90px; }
         }
     </style>
 </head>
@@ -967,7 +880,7 @@
         </div>
     </section>
 
-    <!-- BEFORE / AFTER -->
+    <!-- BEFORE / AFTER (LOCAL IMAGES) -->
     <section id="before-after">
         <div class="section-header">
             <h2>Vorher / Nachher</h2>
@@ -977,12 +890,14 @@
         <div class="before-after-wrapper">
             <div class="before-after">
                 <div class="after-img">
-                    <img src="https://images.unsplash.com/photo-1598470470809-83d7956ff06f?auto=format&fit=crop&w=1200&q=80"
-                         alt="Nachher: modern saniertes Bad" loading="lazy">
+                    <img src="img/bad-nachher-02.jpg"
+                         alt="Nachher: modern saniertes Bad"
+                         loading="lazy">
                 </div>
                 <div class="before-img" id="beforeImg">
-                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=80"
-                         alt="Vorher: altes Bad" loading="lazy">
+                    <img src="img/bad-vorher-01.jpg"
+                         alt="Vorher: altes Bad"
+                         loading="lazy">
                 </div>
                 <div class="before-after-label">Vorher / Nachher</div>
                 <div class="before-after-range">
@@ -999,7 +914,7 @@
         </div>
     </section>
 
-    <!-- GALERIE -->
+    <!-- GALERIE (LOCAL IMAGES) -->
     <section id="galerie">
         <div class="section-header">
             <h2>Galerie</h2>
@@ -1008,12 +923,14 @@
 
         <div class="gallery-layout">
             <div class="gallery-main">
-                <img src="https://images.unsplash.com/photo-1598470470809-83d7956ff06f?auto=format&fit=crop&w=1200&q=80"
-                     alt="Modernes Bad mit freistehender Badewanne und Fliesen" loading="lazy">
+                <img src="img/bad-galerie-03.jpg"
+                     alt="Badprojekt – Galerie Bild"
+                     loading="lazy">
             </div>
             <div class="gallery-side">
-                <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=900&q=80"
-                     alt="Detailaufnahme einer hochwertigen Fliesenwand" loading="lazy">
+                <img src="img/bad-galerie-04.jpg"
+                     alt="Badprojekt – Detailaufnahme"
+                     loading="lazy">
             </div>
         </div>
     </section>
@@ -1137,7 +1054,7 @@
            Handwerkskammer Reutlingen</p>
 
         <p><strong>Haftungsausschluss:</strong><br>
-           Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links.
+           Trotz sorgfältiger inhaltlichen Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links.
            Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
 
         <p><strong>Urheberrecht:</strong><br>
