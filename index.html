@@ -473,7 +473,7 @@
             color: var(--text-muted);
         }
 
-        /* BEFORE/AFTER */
+        /* BEFORE/AFTER (FIXED) */
         .before-after-wrapper {
             display: grid;
             grid-template-columns: minmax(0, 1.8fr) minmax(0, 1.2fr);
@@ -487,29 +487,42 @@
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-soft);
             border: 1px solid var(--border-subtle);
+            aspect-ratio: 16 / 9;
+            width: 100%;
+            min-height: 320px;
         }
 
         .before-after img {
-            display: block;
             width: 100%;
             height: 100%;
+            display: block;
             object-fit: cover;
+        }
+
+        .before-after .after-img {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
         }
 
         .before-after .before-img {
             position: absolute;
             inset: 0;
+            z-index: 2;
+            width: 50%;
+            height: 100%;
             overflow: hidden;
         }
 
-        .before-after .before-img img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .before-after .after-img {
-            position: relative;
-            z-index: 1;
+        .before-after-label {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 3;
+            background: rgba(0,0,0,0.55);
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 12px;
         }
 
         .before-after-range {
@@ -517,24 +530,13 @@
             bottom: 12px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60%;
+            width: min(520px, 70%);
+            z-index: 3;
         }
 
-        .before-after-range input[type="range"] {
-            width: 100%;
-        }
+        .before-after-range input[type="range"] { width: 100%; }
 
-        .before-after-label {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            background: rgba(0,0,0,0.5);
-            padding: 4px 10px;
-            border-radius: 999px;
-            font-size: 12px;
-        }
-
-        /* GALLERY */
+        /* GALLERY (FIXED) */
         .gallery-layout {
             display: grid;
             grid-template-columns: 2fr 1.4fr;
@@ -547,14 +549,27 @@
             overflow: hidden;
             background: #000;
             box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .gallery-main {
+            aspect-ratio: 16 / 10;
+            width: 100%;
+            min-height: 320px;
+        }
+
+        .gallery-side {
+            aspect-ratio: 4 / 5;
+            width: 100%;
+            min-height: 320px;
         }
 
         .gallery-main img,
         .gallery-side img {
             width: 100%;
+            height: 100%;
             display: block;
             object-fit: cover;
-            height: 100%;
         }
 
         /* GOOGLE-BEWERTUNGEN (statisch) */
@@ -1197,16 +1212,17 @@
         });
     });
 
-    // Before/After Slider
+    // Before/After Slider (robust)
     const baRange = document.getElementById("baRange");
     const beforeImg = document.getElementById("beforeImg");
 
     if (baRange && beforeImg) {
         const updateBeforeAfter = () => {
-            const val = baRange.value;
+            const val = Number(baRange.value);
             beforeImg.style.width = val + "%";
         };
         baRange.addEventListener("input", updateBeforeAfter);
+        window.addEventListener("resize", updateBeforeAfter);
         updateBeforeAfter();
     }
 
@@ -1257,8 +1273,10 @@
                     status.style.color = "#22C55E";
                     status.textContent = "Deine Nachricht wird gesendet...";
                 }
-                // E-Mail Versand erfolgt über Formspree (action-URL ist oben gesetzt)
             }
         });
     }
-</script>                             
+</script>
+
+</body>
+</html>
